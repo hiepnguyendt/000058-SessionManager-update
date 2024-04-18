@@ -12,21 +12,21 @@
     <title>Tạo S3 Bucket :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713376416" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713376416" rel="stylesheet">
-    <link href="/css/hybrid.css?1713376416" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713376416" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713376416" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713376416" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713376416" rel="stylesheet">
-    <link href="/css/theme.css?1713376416" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713376416" rel="stylesheet">
+    <link href="/css/nucleus.css?1713412590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713412590" rel="stylesheet">
+    <link href="/css/hybrid.css?1713412590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713412590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713412590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713412590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713412590" rel="stylesheet">
+    <link href="/css/theme.css?1713412590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713412590" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713376416" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713412590" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713376416"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713412590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713376416"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713376416"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713412590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713412590"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713376416"></script>
+<script type="text/javascript" src="/js/search.js?1713412590"></script>
 
     
   </div>
@@ -1055,28 +1055,31 @@
 	<p>Trong bước này, chúng ta sẽ tạo 1 S3 bucket để lưu trữ các session logs được gửi từ các EC2 instance.</p>
 <h4 id="tao-s3-bucket">Tạo <strong>S3 Bucket</strong></h4>
 <ol>
-<li>Truy cập <a href="https://s3.console.aws.amazon.com/s3/home">giao diện quản trị dịch vụ S3</a></li>
-</ol>
+<li>
+<p>Truy cập <a href="https://s3.console.aws.amazon.com/s3/home">giao diện quản trị dịch vụ S3</a></p>
 <ul>
-<li>Click <strong>Create bucket</strong>.</li>
+<li>Click <strong>Create bucket</strong>.
+<img alt="S3" src="/images/2/63.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/005-s3.png"></p>
-<ol start="2">
-<li>Tại trang <strong>Create bucket</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Tại trang <strong>Create bucket</strong>.</p>
 <ul>
+<li>In the <strong>Bucket type</strong>, select <strong>General purpose</strong></li>
 <li>Tại mục <strong>Bucket name</strong> điền tên bucket <strong>lab-yourname-bucket-0001</strong></li>
-<li>Tại mục <strong>Region</strong> chọn <strong>Region</strong> bạn đang làm lab hiện tại.</li>
+<li>In the <strong>Object Ownership</strong> section, select <strong>ACLs disable (recommended)</strong>
+<img alt="S3" src="/images/2/64.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/006-s3.png"></p>
+</li>
+</ol>
 
 <div class="notices tip" ><p>Tên S3 bucket phải đảm bảo không trùng với toàn bộ S3 bucket khác trong hệ thống. Bạn có thể thay thế tên mình và điền số ngẫu nhiên khi tạo tên S3 bucket.</p>
 </div>
 
 <ol start="3">
-<li>Kéo chuột xuống phía dưới và click <strong>Create bucket</strong>.</li>
+<li>Kéo chuột xuống phía dưới và click <strong>Create bucket</strong>.
+<img alt="S3" src="/images/2/65.png"></li>
 </ol>
-<p><img alt="S3" src="/images/4.s3/007-s3.png"></p>
 
 <div class="notices tip" ><p>Khi tạo S3 bucket chúng ta đã thực hiện <strong>Block all public access</strong> nên các EC2 instance của chúng ta sẽ không thể kết nối tới S3 thông qua mạng internet.
 Trong bước tiếp theo chúng ta sẽ cấu hình tính năng S3 Gateway Endpoint để cho phép các EC2 instance có thể kết nối tới S3 bucket thông qua mạng nội bộ của VPC.</p>
@@ -1578,19 +1581,19 @@ Trong bước tiếp theo chúng ta sẽ cấu hình tính năng S3 Gateway Endp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713376416"></script>
-    <script src="/js/jquery.sticky.js?1713376416"></script>
-    <script src="/js/featherlight.min.js?1713376416"></script>
-    <script src="/js/highlight.pack.js?1713376416"></script>
+    <script src="/js/clipboard.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713412590"></script>
+    <script src="/js/jquery.sticky.js?1713412590"></script>
+    <script src="/js/featherlight.min.js?1713412590"></script>
+    <script src="/js/highlight.pack.js?1713412590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713376416"></script>
-    <script src="/js/learn.js?1713376416"></script>
-    <script src="/js/hugo-learn.js?1713376416"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713412590"></script>
+    <script src="/js/learn.js?1713412590"></script>
+    <script src="/js/hugo-learn.js?1713412590"></script>
 
-    <link href="/mermaid/mermaid.css?1713376416" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713376416"></script>
+    <link href="/mermaid/mermaid.css?1713412590" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713412590"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

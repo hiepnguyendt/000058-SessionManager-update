@@ -12,21 +12,21 @@
     <title>Cập nhật IAM Role :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713376416" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713376416" rel="stylesheet">
-    <link href="/css/hybrid.css?1713376416" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713376416" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713376416" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713376416" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713376416" rel="stylesheet">
-    <link href="/css/theme.css?1713376416" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713376416" rel="stylesheet">
+    <link href="/css/nucleus.css?1713412590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713412590" rel="stylesheet">
+    <link href="/css/hybrid.css?1713412590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713412590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713412590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713412590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713412590" rel="stylesheet">
+    <link href="/css/theme.css?1713412590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713412590" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713376416" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713412590" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713376416"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713412590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713376416"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713376416"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713412590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713412590"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713376416"></script>
+<script type="text/javascript" src="/js/search.js?1713412590"></script>
 
     
   </div>
@@ -1055,30 +1055,32 @@
 	<p>Để các EC2 instance của chúng ta có thể gửi session log tới S3 bucket , chúng ta sẽ cần cập nhật IAM Role đã gán vào EC2 instance bằng cách thêm vào policy cho phép quyền truy cập vào S3.</p>
 <h4 id="cập-nhật-iam-role">Cập nhật IAM Role</h4>
 <ol>
-<li>Truy cập vào <a href="https://console.aws.amazon.com/iamv2/home?#/home">giao diện quản trị dịch vụ IAM</a></li>
-</ol>
+<li>
+<p>Truy cập vào <a href="https://console.aws.amazon.com/iamv2/home?#/home">giao diện quản trị dịch vụ IAM</a></p>
 <ul>
 <li>Click <strong>Roles</strong>.</li>
 <li>Tại ô tìm kiếm , điền <strong>SSM</strong>.</li>
-<li>Click vào role <strong>SSM-Role</strong>.</li>
+<li>Click vào role <strong>SSM-Role</strong>.
+<img alt="S3" src="/images/2/60.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/002-s3.png"></p>
-<ol start="2">
-<li>Click <strong>Attach policies</strong>.</li>
-</ol>
-<p><img alt="S3" src="/images/4.s3/003-s3.png"></p>
-<ol start="3">
-<li>Tại ô Search điền <strong>S3</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Click <strong>Attach policies</strong>.
+<img alt="S3" src="/images/2/61.png"></p>
+</li>
+<li>
+<p>Tại ô Search điền <strong>S3</strong>.</p>
 <ul>
 <li>Click chọn policy <strong>AmazonS3FullAccess</strong>.</li>
-<li>Click <strong>Attach policy</strong>.</li>
-</ul>
-<p><img alt="S3" src="/images/4.s3/004-s3.png"></p>
+<li>Click <strong>Add permissions</strong>.
+<img alt="S3" src="/images/2/62.png">
 
 <div class="notices tip" ><p>Trong thực tế chúng ta sẽ cấp quyền chặt chẽ hơn tới S3 bucket chỉ định. Trong khuôn khổ bài lab này chúng ta sử dụng policy <strong>AmazonS3FullAccess</strong> cho tiện dụng.</p>
 </div>
-
+</li>
+</ul>
+</li>
+</ol>
 <p>Tiếp theo chúng ta sẽ tiến hành tạo S3 bucket để lưu trữ session logs.</p>
 
 
@@ -1573,19 +1575,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713376416"></script>
-    <script src="/js/jquery.sticky.js?1713376416"></script>
-    <script src="/js/featherlight.min.js?1713376416"></script>
-    <script src="/js/highlight.pack.js?1713376416"></script>
+    <script src="/js/clipboard.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713412590"></script>
+    <script src="/js/jquery.sticky.js?1713412590"></script>
+    <script src="/js/featherlight.min.js?1713412590"></script>
+    <script src="/js/highlight.pack.js?1713412590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713376416"></script>
-    <script src="/js/learn.js?1713376416"></script>
-    <script src="/js/hugo-learn.js?1713376416"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713412590"></script>
+    <script src="/js/learn.js?1713412590"></script>
+    <script src="/js/hugo-learn.js?1713412590"></script>
 
-    <link href="/mermaid/mermaid.css?1713376416" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713376416"></script>
+    <link href="/mermaid/mermaid.css?1713412590" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713412590"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

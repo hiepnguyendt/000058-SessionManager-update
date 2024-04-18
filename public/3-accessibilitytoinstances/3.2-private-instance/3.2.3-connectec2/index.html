@@ -12,21 +12,21 @@
     <title>Connect to instance :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713378634" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713378634" rel="stylesheet">
-    <link href="/css/hybrid.css?1713378634" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713378634" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713378634" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713378634" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713378634" rel="stylesheet">
-    <link href="/css/theme.css?1713378634" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713378634" rel="stylesheet">
+    <link href="/css/nucleus.css?1713412590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713412590" rel="stylesheet">
+    <link href="/css/hybrid.css?1713412590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713412590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713412590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713412590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713412590" rel="stylesheet">
+    <link href="/css/theme.css?1713412590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713412590" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713378634" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713412590" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713378634"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713412590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713378634"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713378634"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713412590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713412590"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713378634"></script>
+<script type="text/javascript" src="/js/search.js?1713412590"></script>
 
     
   </div>
@@ -844,13 +844,13 @@
  
   
     
-    <li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/6-cleanup/" title="Port Forwarding" class="dd-item 
         
         
         
         ">
       <a href="/6-cleanup/">
-          <b>6. </b>Clean up resources
+           <b> 5. </b> Port Forwarding
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1060,52 +1060,57 @@
 
 	<h4 id="assign-iam-role-and-restart-ec2-instance">Assign IAM role and restart EC2 instance.</h4>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/ec2/v2/home">EC2 service management console</a></li>
-</ol>
+<li>
+<p>Go to <a href="https://console.aws.amazon.com/ec2/v2/home">EC2 service management console</a></p>
 <ul>
 <li>Click <strong>Private Windows Instance</strong>.</li>
 <li>Click <strong>Actions</strong>.</li>
 <li>Click <strong>Security</strong>.</li>
-<li>Click <strong>Modify IAM Role</strong>.</li>
+<li>Click <strong>Modify IAM Role</strong>.
+<img alt="Connect" src="/images/2/54.png"></li>
 </ul>
-<p><img alt="Connect" src="/images/3.connect/027-ec2role.png"></p>
-<ol start="2">
-<li>At the <strong>Modify IAM Role</strong> page.</li>
-</ol>
+</li>
+<li>
+<p>At the <strong>Modify IAM Role</strong> page.</p>
 <ul>
 <li>In the IAM role section, select <strong>SSM-Role</strong>.</li>
-<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>Update IAM role</strong>.
+<img alt="Connect" src="/images/2/55.png"></li>
 </ul>
-<p><img alt="Connect" src="/images/3.connect/028-ec2role.png"></p>
-<ol start="3">
-<li>Click <strong>Private Windows Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Click <strong>Private Windows Instance</strong>.</p>
 <ul>
 <li>Click <strong>Instance state</strong>.</li>
-<li>Click <strong>Reboot instance</strong> to restart, then click <strong>Reboot</strong> to confirm.</li>
-</ul>
-<p><img alt="Connect" src="/images/3.connect/029-ec2role.png"></p>
+<li>Click <strong>Reboot instance</strong> to restart, then click <strong>Reboot</strong> to confirm.
+<img alt="Connect" src="/images/2/56.png">
 
 <div class="notices note" ><p>Please wait 5 minutes before doing the next step.</p>
 </div>
-
+</li>
+</ul>
+</li>
+</ol>
 <h4 id="connect-to-the-private-ec2-instance">Connect to the private EC2 instance.</h4>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/systems-manager/session-manager">System Manager - Session Manager service management console</a></li>
-</ol>
+<li>
+<p>Go to <a href="https://console.aws.amazon.com/systems-manager/session-manager">System Manager - Session Manager service management console</a></p>
 <ul>
 <li>Click <strong>Start session</strong>.</li>
 </ul>
-<ol start="2">
-<li>Click <strong>Private Windows Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Click <strong>Private Windows Instance</strong>.</p>
 <ul>
-<li>Click <strong>Start session</strong>.</li>
+<li>Click <strong>Start session</strong>.
+<img alt="Connect" src="/images/2/57.png"></li>
 </ul>
-<ol start="3">
-<li>Type <strong>ipconfig</strong> command to check the IP address information of <strong>Private Windows Instance</strong> as shown below.</li>
+</li>
+<li>
+<p>Type <strong>ipconfig</strong> command to check the IP address information of <strong>Private Windows Instance</strong> as shown below.
+<img alt="Connect" src="/images/2/58.png"></p>
+</li>
 </ol>
-<p><img alt="Connect" src="/images/3.connect/030-ec2role.png"></p>
 
 
 
@@ -1606,19 +1611,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713378634"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713378634"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713378634"></script>
-    <script src="/js/jquery.sticky.js?1713378634"></script>
-    <script src="/js/featherlight.min.js?1713378634"></script>
-    <script src="/js/highlight.pack.js?1713378634"></script>
+    <script src="/js/clipboard.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713412590"></script>
+    <script src="/js/jquery.sticky.js?1713412590"></script>
+    <script src="/js/featherlight.min.js?1713412590"></script>
+    <script src="/js/highlight.pack.js?1713412590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713378634"></script>
-    <script src="/js/learn.js?1713378634"></script>
-    <script src="/js/hugo-learn.js?1713378634"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713412590"></script>
+    <script src="/js/learn.js?1713412590"></script>
+    <script src="/js/hugo-learn.js?1713412590"></script>
 
-    <link href="/mermaid/mermaid.css?1713378634" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713378634"></script>
+    <link href="/mermaid/mermaid.css?1713412590" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713412590"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

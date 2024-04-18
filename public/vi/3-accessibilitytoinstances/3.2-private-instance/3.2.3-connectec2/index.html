@@ -12,21 +12,21 @@
     <title>Kết nối EC2 Private :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713376416" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713376416" rel="stylesheet">
-    <link href="/css/hybrid.css?1713376416" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713376416" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713376416" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713376416" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713376416" rel="stylesheet">
-    <link href="/css/theme.css?1713376416" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713376416" rel="stylesheet">
+    <link href="/css/nucleus.css?1713412590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713412590" rel="stylesheet">
+    <link href="/css/hybrid.css?1713412590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713412590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713412590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713412590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713412590" rel="stylesheet">
+    <link href="/css/theme.css?1713412590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713412590" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713376416" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713412590" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713376416"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713412590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713376416"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713376416"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713412590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713412590"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713376416"></script>
+<script type="text/javascript" src="/js/search.js?1713412590"></script>
 
     
   </div>
@@ -1060,52 +1060,57 @@
 
 	<h4 id="gán-iam-role-và-restart-ec2-instance">Gán IAM role và restart EC2 instance.</h4>
 <ol>
-<li>Truy cập <a href="https://console.aws.amazon.com/ec2/v2/home">giao diện quản trị dịch vụ EC2</a></li>
-</ol>
+<li>
+<p>Truy cập <a href="https://console.aws.amazon.com/ec2/v2/home">giao diện quản trị dịch vụ EC2</a></p>
 <ul>
 <li>Click chọn <strong>Private Windows Instance</strong>.</li>
 <li>Click <strong>Actions</strong>.</li>
 <li>Click <strong>Security</strong>.</li>
-<li>Click <strong>Modify IAM Role</strong>.</li>
+<li>Click <strong>Modify IAM Role</strong>.
+<img alt="Connect" src="/images/2/54.png"></li>
 </ul>
-<p><img alt="Connect" src="/images/3.connect/027-ec2role.png"></p>
-<ol start="2">
-<li>Tại trang <strong>Modify IAM Role</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Tại trang <strong>Modify IAM Role</strong>.</p>
 <ul>
 <li>Tại mục IAM role, chọn <strong>SSM-Role</strong>.</li>
-<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>Update IAM role</strong>.
+<img alt="Connect" src="/images/2/55.png"></li>
 </ul>
-<p><img alt="Connect" src="/images/3.connect/028-ec2role.png"></p>
-<ol start="3">
-<li>Click chọn <strong>Private Windows Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Click chọn <strong>Private Windows Instance</strong>.</p>
 <ul>
 <li>Click <strong>Instance state</strong>.</li>
-<li>Click <strong>Reboot instance</strong> để thực hiện restart, sau đó click <strong>Reboot</strong> để xác nhận.</li>
+<li>Click <strong>Reboot instance</strong> để thực hiện restart, sau đó click <strong>Reboot</strong> để xác nhận.
+<img alt="Connect" src="/images/2/56.png"></li>
 </ul>
-<p><img alt="Connect" src="/images/3.connect/029-ec2role.png"></p>
+</li>
+</ol>
 
 <div class="notices note" ><p>Bạn hãy đợi 5 phút trước khi làm bước tiếp theo nhé.</p>
 </div>
 
 <h4 id="kết-nối-tới-máy-chủ-private-ec2-instance">Kết nối tới máy chủ private EC2 instance.</h4>
 <ol>
-<li>Truy cập vào <a href="https://console.aws.amazon.com/systems-manager/session-manager">giao diện quản trị dịch vụ System Manager - Session Manager</a></li>
-</ol>
+<li>
+<p>Truy cập vào <a href="https://console.aws.amazon.com/systems-manager/session-manager">giao diện quản trị dịch vụ System Manager - Session Manager</a></p>
 <ul>
 <li>Click <strong>Start session</strong>.</li>
 </ul>
-<ol start="2">
-<li>Click chọn <strong>Private Windows Instance</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Click chọn <strong>Private Windows Instance</strong>.</p>
 <ul>
-<li>Click <strong>Start session</strong>.</li>
+<li>Click <strong>Start session</strong>.
+<img alt="Connect" src="/images/2/57.png"></li>
 </ul>
-<ol start="3">
-<li>Gõ lệnh <strong>ipconfig</strong> để kiểm tra thông tin địa chỉ IP  của <strong>Private Windows Instance</strong> như dưới đây.</li>
+</li>
+<li>
+<p>Gõ lệnh <strong>ipconfig</strong> để kiểm tra thông tin địa chỉ IP  của <strong>Private Windows Instance</strong> như dưới đây.
+<img alt="Connect" src="/images/2/58.png"></p>
+</li>
 </ol>
-<p><img alt="Connect" src="/images/3.connect/030-ec2role.png"></p>
 
 
 
@@ -1606,19 +1611,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713376416"></script>
-    <script src="/js/jquery.sticky.js?1713376416"></script>
-    <script src="/js/featherlight.min.js?1713376416"></script>
-    <script src="/js/highlight.pack.js?1713376416"></script>
+    <script src="/js/clipboard.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713412590"></script>
+    <script src="/js/jquery.sticky.js?1713412590"></script>
+    <script src="/js/featherlight.min.js?1713412590"></script>
+    <script src="/js/highlight.pack.js?1713412590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713376416"></script>
-    <script src="/js/learn.js?1713376416"></script>
-    <script src="/js/hugo-learn.js?1713376416"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713412590"></script>
+    <script src="/js/learn.js?1713412590"></script>
+    <script src="/js/hugo-learn.js?1713412590"></script>
 
-    <link href="/mermaid/mermaid.css?1713376416" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713376416"></script>
+    <link href="/mermaid/mermaid.css?1713412590" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713412590"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

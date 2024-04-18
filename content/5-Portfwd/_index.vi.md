@@ -19,24 +19,30 @@ Chúng ta sẽ cấu hình **Port Forwarding** cho kết nối RDP giữa máy c
 #### Tạo IAM User có quyền kết nối SSM
 
 1. Truy cập vào [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home)
-  + Click **Users** , sau đó click **Add users**.
+    - Click **Users** , sau đó click **Add users**.
+![FWD](/images/2/74.png)
 
-![FWD](/images/5.fwd/001-fwd.png)
-
-2. Tại trang **Add user**.
-  + Tại mục **User name**, điền **Portfwd**.
-  + Click chọn **Access key - Programmatic access**.
-  + Click **Next: Permissions**.
-  
-![FWD](/images/5.fwd/002-fwd.png)
-
-3. Click **Attach existing policies directly**.
-  + Tại ô tìm kiếm , điền **ssm**.
-  + Click chọn **AmazonSSMFullAccess**.
-  + Click **Next: Tags**, click **Next: Reviews**.
-  + Click **Create user**.
-
-4. Lưu lại thông tin **Access key ID** và **Secret access key** để thực hiện cấu hình AWS CLI.
+2. Tại trang **Create user**.
+    - Tại mục **User name**, điền **Portfwd**.
+    - Click **Next**.
+![FWD](/images/2/75.png)
+3. Tại trang **Set permission** 
+   - Chọn **Attach policies directly**
+   - Tại thanh tìm kiếm, nhập **ssm**.
+   - Click  **AmazonSSMFullAccess**.
+   - Click **Next**, click **Next: Reviews**.
+   - Click **Create user**.
+![FWD](/images/2/76.png)
+4. Tạo access key cho **Portfwd** user 
+   - Click **Create access key**
+   ![FWD](/images/2/77.png)
+   - Chọn **Command Line Interface(CLI)**
+   - Check box confirmation
+   - Click **Next**
+![FWD](/images/2/78.png)
+   - Click **Download.csv file**
+![FWD](/images/2/79.png)
+Lưu lại thông tin **Access key ID** và **Secret access key** để thực hiện cấu hình AWS CLI.
 
 #### Cài đặt và cấu hình AWS CLI và Session Manager Plugin 
   
@@ -51,43 +57,37 @@ Với Windows thì khi giải nén thư mục cài đặt **Session Manager Plug
 #### Thực hiện Portforwarding 
 
 1. Chạy command dưới đây trong **Command Prompt** trên máy của bạn để cấu hình **Port Forwarding**.
+    ```
+      aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region) 
+    ```
+  
+  {{%notice tip%}}
 
-```
-  aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region) 
-```
-{{%notice tip%}}
+  Thông tin **Instance ID** của **Windows Private Instance** có thể tìm được khi bạn xem chi tiết máy chủ EC2 Windows Private Instance.
 
-Thông tin **Instance ID** của **Windows Private Instance** có thể tìm được khi bạn xem chi tiết máy chủ EC2 Windows Private Instance.
+  {{%/notice%}}
 
-{{%/notice%}}
+  - Câu lệnh ví dụ
 
-  + Câu lệnh ví dụ
+    ```
+    C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
+    ```
 
-```
-C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
-```
-
-{{%notice warning%}}
-
-Nếu câu lệnh của bạn báo lỗi như dưới đây : \
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
-Chứng tỏ bạn chưa cài Session Manager Plugin thành công. Bạn có thể cần khởi chạy lại **Command Prompt** sau khi cài **Session Manager Plugin**.
-
-{{%/notice%}}
+  {{%notice warning%}}
+  Nếu câu lệnh của bạn báo lỗi như dưới đây : \
+  SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
+  Chứng tỏ bạn chưa cài Session Manager Plugin thành công. Bạn có thể cần khởi chạy lại **Command Prompt** sau khi cài **Session Manager Plugin**.
+  {{%/notice%}}
 
 2. Kết nối tới **Private Windows Instance** bạn đã tạo bằng công cụ **Remote Desktop** trên máy trạm của bạn.
-  + Tại mục Computer: điền **localhost:9999**.
-
-
-![FWD](/images/5.fwd/003-fwd.png)
+    - Tại mục Computer: điền **localhost:9999**.
+![FWD](/images/2/80.png)
 
 
 3. Quay trở lại giao diện quản trị của dịch vụ System Manager - Session Manager.
-  + Click tab **Session history**.
-  + Chúng ta sẽ thấy các session logs với tên Document là **AWS-StartPortForwardingSession**.
-
-
-![FWD](/images/5.fwd/004-fwd.png)
+    - Click tab **Session history**.
+    - Chúng ta sẽ thấy các session logs với tên Document là **AWS-StartPortForwardingSession**.
+![FWD](/images/2/81.png)
 
 
 Chúc mừng bạn đã hoàn tất bài thực hành hướng dẫn cách sử dụng Session Manager để kết nối cũng như lưu trữ các session logs trong S3 bucket. Hãy nhớ thực hiện bước dọn dẹp tài nguyên để tránh sinh chi phí ngoài ý muốn nhé.

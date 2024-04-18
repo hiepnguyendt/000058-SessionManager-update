@@ -12,21 +12,21 @@
     <title>Clean up resources :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713376416" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713376416" rel="stylesheet">
-    <link href="/css/hybrid.css?1713376416" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713376416" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713376416" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713376416" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713376416" rel="stylesheet">
-    <link href="/css/theme.css?1713376416" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713376416" rel="stylesheet">
+    <link href="/css/nucleus.css?1713413544" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713413544" rel="stylesheet">
+    <link href="/css/hybrid.css?1713413544" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713413544" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713413544" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713413544" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713413544" rel="stylesheet">
+    <link href="/css/theme.css?1713413544" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713413544" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713376416" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713413544" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713376416"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713413544"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713376416"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713376416"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713413544"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713413544"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713376416"></script>
+<script type="text/javascript" src="/js/search.js?1713413544"></script>
 
     
   </div>
@@ -850,7 +850,7 @@
         
         ">
       <a href="/6-cleanup/">
-          <b>6. </b>Clean up resources
+           <b> 6. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -953,7 +953,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>18-04-2024</font></i>
     </left>
     <left>
         <br>
@@ -1049,27 +1049,28 @@
 	<p>We will take the following steps to delete the resources we created in this exercise.</p>
 <h4 id="delete-ec2-instance">Delete EC2 instance</h4>
 <ol>
-<li>
-<p>Go to <a href="https://console.aws.amazon.com/ec2/v2/home">EC2 service management console</a></p>
+<li>Go to <a href="https://console.aws.amazon.com/ec2/v2/home">EC2 service management console</a>
 <ul>
 <li>Click <strong>Instances</strong>.</li>
 <li>Select both <strong>Public Linux Instance</strong> and <strong>Private Windows Instance</strong> instances.</li>
 <li>Click <strong>Instance state</strong>.</li>
-<li>Click <strong>Terminate instance</strong>, then click <strong>Terminate</strong> to confirm.</li>
+<li>Click <strong>Terminate instance</strong>
+<img alt="Clean" src="/images/2/82.png"></li>
+<li>Then click <strong>Terminate</strong> to confirm
+<img alt="Clean" src="/images/2/83.png"></li>
 </ul>
 </li>
-<li>
-<p>Go to <a href="https://console.aws.amazon.com/iamv2/home#/home">IAM service management console</a></p>
+<li>Go to <a href="https://console.aws.amazon.com/iamv2/home#/home">IAM service management console</a>
 <ul>
 <li>Click <strong>Roles</strong>.</li>
 <li>In the search box, enter <strong>SSM</strong>.</li>
 <li>Click to select <strong>SSM-Role</strong>.</li>
-<li>Click <strong>Delete</strong>, then enter the role name <strong>SSM-Role</strong> and click <strong>Delete</strong> to delete the role.</li>
+<li>Click <strong>Delete</strong>
+<img alt="Clean" src="/images/2/84.png"></li>
+<li>Then enter the role name <strong>SSM-Role</strong> and click <strong>Delete</strong> to delete
+<img alt="Clean" src="/images/2/85.png"></li>
 </ul>
 </li>
-</ol>
-<p><img alt="Clean" src="/images/6.clean/001-clean.png"></p>
-<ol start="3">
 <li>Click <strong>Users</strong>.
 <ul>
 <li>Click on user <strong>Portfwd</strong>.</li>
@@ -1103,25 +1104,22 @@
 <li>
 <p>After deleting all objects in the bucket, click <strong>Delete</strong></p>
 </li>
+<li>
+<p>Enter the name of the S3 bucket, then click <strong>Delete bucket</strong> to proceed with deleting the S3 bucket.</p>
+</li>
 </ol>
-<p><img alt="Clean" src="/images/6.clean/002-clean.png"></p>
-<ol start="4">
-<li>Enter the name of the S3 bucket, then click <strong>Delete bucket</strong> to proceed with deleting the S3 bucket.</li>
-</ol>
-<p><img alt="Clean" src="/images/6.clean/003-clean.png"></p>
 <h4 id="delete-vpc-endpoints">Delete VPC Endpoints</h4>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/vpc/home">VPC service management console</a>
+<li>
+<p>Go to <a href="https://console.aws.amazon.com/vpc/home">VPC service management console</a></p>
 <ul>
 <li>Click <strong>Endpoints</strong>.</li>
 <li>Select the 4 endpoints we created for the lab including <strong>SSM</strong>, <strong>SSMMESSAGES</strong>, <strong>EC2MESSAGES</strong>, <strong>S3GW</strong>.</li>
 <li>Click <strong>Actions</strong>.</li>
-<li>Click <strong>Delete VPC endpoints</strong>.</li>
+<li>Click <strong>Delete VPC endpoints</strong>.
+<img alt="Clean" src="/images/2/86.png"></li>
 </ul>
 </li>
-</ol>
-<p><img alt="Clean" src="/images/6.clean/004-clean.png"></p>
-<ol start="2">
 <li>
 <p>In the confirm box, enter <strong>delete</strong>.</p>
 <ul>
@@ -1129,10 +1127,10 @@
 </ul>
 </li>
 <li>
-<p>Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.</p>
+<p>Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.
+<img alt="Clean" src="/images/2/87.png"></p>
 </li>
 </ol>
-<p><img alt="Clean" src="/images/6.clean/005-clean.png"></p>
 <h4 id="delete-vpc">Delete VPC</h4>
 <ol>
 <li>
@@ -1141,14 +1139,15 @@
 <li>Click <strong>Your VPCs</strong>.</li>
 <li>Click on <strong>Lab VPC</strong>.</li>
 <li>Click <strong>Actions</strong>.</li>
-<li>Click <strong>Delete VPC</strong>.</li>
+<li>Click <strong>Delete VPC</strong>.
+<img alt="Clean" src="/images/2/88.png"></li>
 </ul>
 </li>
 <li>
-<p>In the confirm box, enter <strong>delete</strong> to confirm, click <strong>Delete</strong> to delete <strong>Lab VPC</strong> and related resources.</p>
+<p>In the confirm box, enter <strong>delete</strong> to confirm, click <strong>Delete</strong> to delete <strong>Lab VPC</strong> and related resources.
+<img alt="Clean" src="/images/2/89.png"></p>
 </li>
 </ol>
-<p><img alt="Clean" src="/images/6.clean/006-clean.png"></p>
 
 
 
@@ -1638,19 +1637,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713376416"></script>
-    <script src="/js/jquery.sticky.js?1713376416"></script>
-    <script src="/js/featherlight.min.js?1713376416"></script>
-    <script src="/js/highlight.pack.js?1713376416"></script>
+    <script src="/js/clipboard.min.js?1713413544"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713413544"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713413544"></script>
+    <script src="/js/jquery.sticky.js?1713413544"></script>
+    <script src="/js/featherlight.min.js?1713413544"></script>
+    <script src="/js/highlight.pack.js?1713413544"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713376416"></script>
-    <script src="/js/learn.js?1713376416"></script>
-    <script src="/js/hugo-learn.js?1713376416"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713413544"></script>
+    <script src="/js/learn.js?1713413544"></script>
+    <script src="/js/hugo-learn.js?1713413544"></script>
 
-    <link href="/mermaid/mermaid.css?1713376416" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713376416"></script>
+    <link href="/mermaid/mermaid.css?1713413544" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713413544"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

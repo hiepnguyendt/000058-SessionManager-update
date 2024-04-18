@@ -1,4 +1,4 @@
----
+  ---
 title : "Update IAM Role"
 date : "`r Sys.Date()`"
 weight : 1
@@ -11,21 +11,18 @@ For our EC2 instances to be able to send session logs to the S3 bucket, we will 
 #### Update IAM Role
 
 1. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home?#/home)
-  + Click **Roles**.
-  + In the search box, enter **SSM**.
-  + Click on the **SSM-Role** role.
-
-![S3](/images/4.s3/002-s3.png)
+    - Click **Roles**.
+    - In the search box, enter **SSM**.
+    - Click on the **SSM-Role** role.
+![S3](/images/2/60.png)
 
 2. Click **Attach policies**.
- 
-![S3](/images/4.s3/003-s3.png)
+![S3](/images/2/61.png)
 
 3. In the Search box enter **S3**.
-  + Click the policy **AmazonS3FullAccess**.
-  + Click **Attach policy**.
- 
-![S3](/images/4.s3/004-s3.png)
+    - Click the policy **AmazonS3FullAccess**.
+    - Click **Add permissions**.
+![S3](/images/2/62.png)
  
 {{%notice tip%}}
 In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy **AmazonS3FullAccess** for convenience.

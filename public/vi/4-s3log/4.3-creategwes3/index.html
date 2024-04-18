@@ -12,21 +12,21 @@
     <title>Tạo S3 Gateway endpoint :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1713376416" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713376416" rel="stylesheet">
-    <link href="/css/hybrid.css?1713376416" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713376416" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713376416" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713376416" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713376416" rel="stylesheet">
-    <link href="/css/theme.css?1713376416" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713376416" rel="stylesheet">
+    <link href="/css/nucleus.css?1713412590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713412590" rel="stylesheet">
+    <link href="/css/hybrid.css?1713412590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713412590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713412590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713412590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713412590" rel="stylesheet">
+    <link href="/css/theme.css?1713412590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713412590" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713376416" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713412590" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713376416"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713412590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713376416"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713376416"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713412590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713412590"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713376416"></script>
+<script type="text/javascript" src="/js/search.js?1713412590"></script>
 
     
   </div>
@@ -1045,31 +1045,32 @@
 
 
 	<ol>
-<li>Truy cập vào <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị dịch vụ VPC</a></li>
-</ol>
+<li>
+<p>Truy cập vào <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị dịch vụ VPC</a></p>
 <ul>
 <li>Click <strong>Endpoints</strong>.</li>
 <li>Click <strong>Create endpoint</strong>.</li>
 </ul>
-<ol start="2">
-<li>Tại trang <strong>Create endpoint</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Tại trang <strong>Create endpoint</strong>.</p>
 <ul>
 <li>Tại mục <strong>Name tag</strong> điền <strong>S3GW</strong>.</li>
 <li>Tại mục <strong>Service Category</strong> click chọn <strong>AWS services</strong>.</li>
-<li>Tại ô tìm kiếm điền <strong>S3</strong>, sau đó chọn <strong>com.amazonaws.[region].s3</strong></li>
+<li>Tại ô tìm kiếm điền <strong>S3</strong>, sau đó chọn <strong>com.amazonaws.[region].s3</strong> có Type là <strong>Gateway</strong>.
+<img alt="S3" src="/images/2/66.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/008-s3.png"></p>
-<ol start="3">
-<li>Tại mục <strong>Services</strong> chọn <strong>com.amazonaws.[region].s3</strong> có Type là <strong>Gateway</strong>.</li>
-</ol>
+</li>
+<li>
 <ul>
 <li>Tại mục <strong>VPC</strong> , chọn <strong>Lab VPC</strong>.</li>
-<li>Tại mục <strong>Route tables</strong>, chọn cả 2 route table.</li>
+<li>Tại mục <strong>Route tables</strong>, chọn cả 2 route table.
+<img alt="S3" src="/images/2/67.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/009-s3.png"></p>
-<ol start="4">
-<li>Kéo chuột xuống dưới cùng, click <strong>Create endpoint</strong>.</li>
+</li>
+<li>
+<p>Kéo chuột xuống dưới cùng, click <strong>Create endpoint</strong>.</p>
+</li>
 </ol>
 <p>Bước tiếp theo chúng ta sẽ tiến hành cấu hình Session Manager để có thể lưu trữ các session logs tới S3 bucket chúng ta đã tạo.</p>
 
@@ -1568,19 +1569,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713376416"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713376416"></script>
-    <script src="/js/jquery.sticky.js?1713376416"></script>
-    <script src="/js/featherlight.min.js?1713376416"></script>
-    <script src="/js/highlight.pack.js?1713376416"></script>
+    <script src="/js/clipboard.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713412590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713412590"></script>
+    <script src="/js/jquery.sticky.js?1713412590"></script>
+    <script src="/js/featherlight.min.js?1713412590"></script>
+    <script src="/js/highlight.pack.js?1713412590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713376416"></script>
-    <script src="/js/learn.js?1713376416"></script>
-    <script src="/js/hugo-learn.js?1713376416"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713412590"></script>
+    <script src="/js/learn.js?1713412590"></script>
+    <script src="/js/hugo-learn.js?1713412590"></script>
 
-    <link href="/mermaid/mermaid.css?1713376416" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713376416"></script>
+    <link href="/mermaid/mermaid.css?1713412590" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713412590"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

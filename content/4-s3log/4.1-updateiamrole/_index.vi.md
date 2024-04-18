@@ -11,22 +11,18 @@ pre : " <b> 4.1 </b> "
 #### Cập nhật IAM Role
 
 1. Truy cập vào [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home?#/home)
-  + Click **Roles**.
-  + Tại ô tìm kiếm , điền **SSM**.
-  + Click vào role **SSM-Role**.
-
-![S3](/images/4.s3/002-s3.png)
+    - Click **Roles**.
+    - Tại ô tìm kiếm , điền **SSM**.
+    - Click vào role **SSM-Role**.
+![S3](/images/2/60.png)
 
 2. Click **Attach policies**.
- 
-![S3](/images/4.s3/003-s3.png)
+![S3](/images/2/61.png)
 
 3. Tại ô Search điền **S3**.
-  + Click chọn policy **AmazonS3FullAccess**.
-  + Click **Attach policy**.
- 
-![S3](/images/4.s3/004-s3.png)
- 
+    - Click chọn policy **AmazonS3FullAccess**.
+    - Click **Add permissions**.
+![S3](/images/2/62.png)
 {{%notice tip%}}
 Trong thực tế chúng ta sẽ cấp quyền chặt chẽ hơn tới S3 bucket chỉ định. Trong khuôn khổ bài lab này chúng ta sử dụng policy **AmazonS3FullAccess** cho tiện dụng.
 {{%/notice%}}

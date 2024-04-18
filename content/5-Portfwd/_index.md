@@ -17,25 +17,32 @@ We will configure **Port Forwarding** for the RDP connection between our machine
 #### Create IAM user with permission to connect SSM
 
 1. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home)
-   + Click **Users** , then click **Add users**.
+   - Click **Users** , then click **Create users**.
+![FWD](/images/2/74.png)
 
-![FWD](/images/5.fwd/001-fwd.png)
+2. At the **Create user** page.
+   - In the **User name** field, enter **Portfwd**.
+   - Click **Next**.
+![FWD](/images/2/75.png)
 
-2. At the **Add user** page.
-   + In the **User name** field, enter **Portfwd**.
-   + Click on **Access key - Programmatic access**.
-   + Click **Next: Permissions**.
-  
-![FWD](/images/5.fwd/002-fwd.png)
+3. At the **Set permission** page
+   - Select **Attach policies directly**
+   - In the search box, enter **ssm**.
+   - Click on **AmazonSSMFullAccess**.
+   - Click **Next**, click **Next: Reviews**.
+   - Click **Create user**.
+![FWD](/images/2/76.png)
+4. Create access key for **Portfwd** user 
+   - Click **Create access key**
+   ![FWD](/images/2/77.png)
+   - Select **Command Line Interface(CLI)**
+   - Check box confirmation
+   - Click **Next**
+![FWD](/images/2/78.png)
+   - Click **Download.csv file**
+![FWD](/images/2/79.png)
 
-3. Click **Attach existing policies directly**.
-   + In the search box, enter **ssm**.
-   + Click on **AmazonSSMFullAccess**.
-   + Click **Next: Tags**, click **Next: Reviews**.
-   + Click **Create user**.
-
-4. Save **Access key ID** and **Secret access key** information to perform AWS CLI configuration.
-
+Save **Access key ID** and **Secret access key** information to perform AWS CLI configuration.
 #### Install and Configure AWS CLI and Session Manager Plugin
   
 To perform this hands-on, make sure your workstation has [AWS CLI]() and [Session Manager Plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session) installed -manager-working-with-install-plugin.html)
@@ -49,43 +56,36 @@ With Windows, when extracting the **Session Manager Plugin** installation folder
 #### Implement Portforwarding
 
 1. Run the command below in **Command Prompt** on your machine to configure **Port Forwarding**.
+   ```
+      aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region)
+   ```
+   {{%notice tip%}}
 
-```
-   aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region)
-```
-{{%notice tip%}}
+   **Windows Private Instance** **Instance ID** information can be found when you view the EC2 Windows Private Instance server details.
 
-**Windows Private Instance** **Instance ID** information can be found when you view the EC2 Windows Private Instance server details.
+   {{%/notice%}}
 
-{{%/notice%}}
+   - Example command:
+   ```
+   C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region us-east-1
+   ```
 
-   + Example command:
+   {{%notice warning%}}
 
-```
-C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
-```
+   If your command gives an error like below: \
+   SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
+   Prove that you have not successfully installed the Session Manager Plugin. You may need to relaunch **Command Prompt** after installing **Session Manager Plugin**.
 
-{{%notice warning%}}
-
-If your command gives an error like below: \
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
-Prove that you have not successfully installed the Session Manager Plugin. You may need to relaunch **Command Prompt** after installing **Session Manager Plugin**.
-
-{{%/notice%}}
+   {{%/notice%}}
 
 2. Connect to the **Private Windows Instance** you created using the **Remote Desktop** tool on your workstation.
-   + In the Computer section: enter **localhost:9999**.
-
-
-![FWD](/images/5.fwd/003-fwd.png)
-
+   - In the Computer section: enter **localhost:9999**.
+![FWD](/images/2/80.png)
 
 3. Return to the administration interface of the System Manager - Session Manager service.
-   + Click tab **Session history**.
-   + We will see session logs with Document name **AWS-StartPortForwardingSession**.
-
-
-![FWD](/images/5.fwd/004-fwd.png)
+   - Click tab **Session history**.
+   - We will see session logs with Document name **AWS-StartPortForwardingSession**.
+![FWD](/images/2/81.png)
 
 
 Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.

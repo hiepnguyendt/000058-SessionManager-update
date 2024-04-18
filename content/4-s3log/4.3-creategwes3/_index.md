@@ -8,21 +8,18 @@ pre : " <b> 4.3 </b> "
 
 
 1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Click **Create endpoint**.
+    - Click **Endpoints**.
+    - Click **Create endpoint**.
 
 2. At the **Create endpoint** page.
-  + In the **Name tag** field, enter **S3GW**.
-  + In the **Service Category** section, click **AWS services**.
-  + In the search box enter **S3**, then select **com.amazonaws.[region].s3**
+    - In the **Name tag** field, enter **S3GW**.
+    - In the **Service Category** section, click **AWS services**.
+    - In the search box enter **S3**, then select **com.amazonaws.[region].s3** with the Type of **Gateway**.
+![S3](/images/2/66.png)
 
-![S3](/images/4.s3/008-s3.png)
-
-3. In the **Services** section, select **com.amazonaws.[region].s3** with the Type of **Gateway**.
-  + In the **VPC** section, select **Lab VPC**.
-  + In the **Route tables** section, select both route tables.
-  
-![S3](/images/4.s3/009-s3.png)
+3.  - In the **VPC** section, select **Lab VPC**.
+    - In the **Route tables** section, select both route tables.
+![S3](/images/2/67.png)
 
 4. Scroll down, click **Create endpoint**.
 
